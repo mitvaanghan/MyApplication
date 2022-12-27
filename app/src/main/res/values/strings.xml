@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">My Application</string>
+
+    //Headings
+    <string name="heading_0ne">Choose your Destination</string>
+    <string name="heading_two">Fast Delivery</string>
+    <string name="heading_Three">Quick &amp; Easy Payments</string>
+
+    //Descripition
+    <string name="desc_one">nfjvjdvjdbehvbhvhebheb</string>
+    <string name="desc_two">njdbchdbchbchdbhbvcjbvjdbvjdb</string>
+    <string name="desc_three">Grow your Business by Accepting card payments with The New Card Reader</string>
+
 </resources>
