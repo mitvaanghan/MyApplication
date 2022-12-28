@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".onboarding">
 
     <Button
@@ -35,8 +36,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="105dp"
         android:layout_marginEnd="105dp"
+        android:gravity="bottom"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="700dp" />
+        app:layout_constraintTop_toBottomOf="@+id/slideviewpager" />
 </androidx.constraintlayout.widget.ConstraintLayout>
