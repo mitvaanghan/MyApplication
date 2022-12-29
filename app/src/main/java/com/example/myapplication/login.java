@@ -35,8 +35,8 @@ public class login extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnSignin);
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
-         signup = findViewById(R.id.txtSignup);
-         forgotpassword = findViewById(R.id.txtForgotpassword);
+         txtSignup = findViewById(R.id.txtSignup);
+         txtForgotpassword = findViewById(R.id.txtForgotpassword);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,14 +58,14 @@ public class login extends AppCompatActivity {
             }
         });
 
-        signup.setOnClickListener(new View.OnClickListener() {
+        txtSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(login.this, signup.class));
             }
         });
 
-        forgotpassword.setOnClickListener(new View.OnClickListener() {
+        txtForgotpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(login.this, forgotpassword.class));

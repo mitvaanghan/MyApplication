@@ -21,6 +21,7 @@ public class signup extends AppCompatActivity {
     FirebaseAuth mAuth;
     EditText edtEmail, edtPassword;
     Button btnSignup;
+    TextView txtSignin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +56,10 @@ public class signup extends AppCompatActivity {
         });
 
 
-        TextView signin = findViewById(R.id.signin);
+         txtSignin = findViewById(R.id.txtsignin);
 
 
-        signin.setOnClickListener(new View.OnClickListener() {
+        txtSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(signup.this, login.class));
