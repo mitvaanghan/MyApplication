@@ -23,6 +23,7 @@ public class login extends AppCompatActivity {
 
     EditText edtEmail, edtPassword;
     Button btnLogin;
+    TextView txtSignup , txtForgotpassword;
     FirebaseAuth mAuth;
 
     @Override
@@ -31,11 +32,11 @@ public class login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
 
-        btnLogin = findViewById(R.id.signin);
-        edtEmail = findViewById(R.id.email);
-        edtPassword = findViewById(R.id.password);
-        TextView signup = findViewById(R.id.signup);
-        TextView forgotpassword = findViewById(R.id.forgotpassword);
+        btnLogin = findViewById(R.id.btnSignin);
+        edtEmail = findViewById(R.id.edtEmail);
+        edtPassword = findViewById(R.id.edtPassword);
+         signup = findViewById(R.id.txtSignup);
+         forgotpassword = findViewById(R.id.txtForgotpassword);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
