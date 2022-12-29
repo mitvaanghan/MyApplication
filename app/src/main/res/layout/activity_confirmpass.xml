@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".confirmpass">
 
     <ImageView
@@ -15,7 +16,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="85dp"
         android:backgroundTint="#EEACA9A9"
-        android:src="@drawable/cnewpass1"
+        android:src="@drawable/cnewpass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -31,6 +32,8 @@
         android:text="Your New Password Must Be Different from Previously Used Password."
         android:textColor="@color/black"
         android:textSize="20dp"
+        android:fontFamily="@font/adamina"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cnewpasswordimg"/>
@@ -47,6 +50,7 @@
         android:drawablePadding="10dp"
         android:elevation="3dp"
         android:hint="New Password"
+        android:fontFamily="@font/adamina"
         android:inputType="textPassword"
         android:padding="10dp"
         android:paddingLeft="20dp"
@@ -70,6 +74,7 @@
         android:elevation="3dp"
         android:hint="Confirm Password"
         android:inputType="textPassword"
+        android:fontFamily="@font/adamina"
         android:padding="10dp"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
@@ -95,6 +100,7 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20dp"
+        android:fontFamily="@font/adamina"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

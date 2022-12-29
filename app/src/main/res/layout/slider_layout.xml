@@ -23,6 +23,7 @@
         android:textAlignment="center"
         android:textColor="@color/blue"
         android:textSize="30dp"
+        android:fontFamily="@font/adamina"
         android:textStyle="bold"/>
 
     <TextView
@@ -34,5 +35,6 @@
         android:text="@string/desc_one"
         android:textAlignment="center"
         android:textColor="@color/black"
+        android:fontFamily="@font/adamina"
         android:textSize="20dp" />
 </LinearLayout>

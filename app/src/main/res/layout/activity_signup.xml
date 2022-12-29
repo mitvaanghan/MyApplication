@@ -8,13 +8,15 @@
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="218dp"
-        android:layout_height="74dp"
-        android:fontFamily="@font/almendra_sc"
+        android:layout_width="296dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/faster_one"
         android:gravity="center"
         android:text="GoodsMent"
         android:textColor="@color/blue"
-        android:textSize="30dp"
+        android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,12 +34,14 @@
         android:text="Create your Account"
         android:textColor='@color/black'
         android:textSize="20dp"
+        android:fontFamily="@font/adamina"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
     <EditText
-        android:id="@+id/uname"
+        android:id="@+id/edtUname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -45,6 +49,7 @@
         android:layout_marginEnd="30dp"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/person"
+        android:fontFamily="@font/adamina"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Name"
@@ -58,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/edtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -67,6 +72,7 @@
         android:inputType="textEmailAddress"
         android:hint="Email"
         android:background="@drawable/input_bg"
+        android:fontFamily="@font/adamina"
         android:drawableLeft="@drawable/email"
         android:drawablePadding="10dp"
         android:ems="10"
@@ -77,10 +83,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/uname" />
+        app:layout_constraintTop_toBottomOf="@+id/edtUname" />
 
     <EditText
-        android:id="@+id/cnumber"
+        android:id="@+id/edtCnumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -90,6 +96,7 @@
         android:hint="Contact Number"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/phone"
+        android:fontFamily="@font/adamina"
         android:drawablePadding="10dp"
         android:ems="10"
         android:paddingLeft="20dp"
@@ -99,10 +106,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
     <EditText
-        android:id="@+id/city"
+        android:id="@+id/edtCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -112,6 +119,7 @@
         android:hint="City"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/city"
+        android:fontFamily="@font/adamina"
         android:drawablePadding="10dp"
         android:ems="10"
         android:paddingLeft="20dp"
@@ -121,10 +129,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cnumber" />
+        app:layout_constraintTop_toBottomOf="@+id/edtCnumber" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/edtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -134,6 +142,7 @@
         android:inputType="textPassword"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/security"
+        android:fontFamily="@font/adamina"
         android:drawablePadding="10dp"
         android:ems="10"
         android:paddingLeft="20dp"
@@ -143,10 +152,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/city" />
+        app:layout_constraintTop_toBottomOf="@+id/edtCity" />
 
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/btnSignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="105dp"
@@ -155,10 +164,12 @@
         android:background="@drawable/btn_bg"
         android:backgroundTint="@color/blue"
         android:text="sign up"
+        android:fontFamily="@font/adamina"
+        android:textStyle="bold"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
 
     <TextView
         android:id="@+id/textView2"
@@ -170,10 +181,12 @@
         android:gravity="center"
         android:text="- Or sign up with -"
         android:textSize="15dp"
-        android:textColor="@color/blue"
+        android:fontFamily="@font/adamina"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSignup" />
 
     <ImageButton
         android:id="@+id/google"
@@ -205,23 +218,27 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="160dp"
+        android:layout_marginEnd="140dp"
+        android:fontFamily="@font/adamina"
         android:text="Already have an Account?"
         android:textColor="@color/black"
         android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/google" />
 
     <TextView
-        android:id="@+id/signin"
+        android:id="@+id/txtsignin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="110dp"
+        android:layout_marginEnd="105dp"
+        android:fontFamily="@font/adamina"
         android:text="Sign in"
         android:textColor="@color/blue"
         android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/facebook" />

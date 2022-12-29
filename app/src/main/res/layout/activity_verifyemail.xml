@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".verifyemail">
 
     <ImageView
@@ -34,6 +35,8 @@
         android:text="Please Enter The 4 Digit Code Sent To"
         android:textColor="@color/black"
         android:textSize="20dp"
+        android:fontFamily="@font/adamina"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/verifyemailimg">
@@ -122,6 +125,7 @@
         android:layout_marginEnd="145dp"
         android:gravity="center"
         android:text="Resend Code"
+        android:fontFamily="@font/adamina"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -144,6 +148,7 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20dp"
+        android:fontFamily="@font/adamina"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
