@@ -9,17 +9,19 @@ import android.widget.Button;
 
 public class forgotpassword extends AppCompatActivity {
 
+    Button btnsend;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgotpassword);
 
-        Button btnsend = findViewById(R.id.btnsend);
+         btnsend = findViewById(R.id.btnsend);
 
         btnsend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(forgotpassword.this,verifyemail.class));
+                startActivity(new Intent(forgotpassword.this,confirmpass.class));
             }
         });
     }
