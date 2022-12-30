@@ -13,9 +13,14 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -29,6 +34,10 @@ public class login extends AppCompatActivity {
     Button btnSignin;
     TextView txtSignup , txtForgotpassword;
     FirebaseAuth mAuth;
+
+    GoogleSignInOptions gso;
+    GoogleSignInClient gsc;
+    ImageButton btnGoogle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +53,8 @@ public class login extends AppCompatActivity {
         btnSignin = findViewById(R.id.btnSignin);
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
-         txtSignup = findViewById(R.id.txtSignup);
-         txtForgotpassword = findViewById(R.id.txtForgotpassword);
+        txtSignup = findViewById(R.id.txtSignup);
+        txtForgotpassword = findViewById(R.id.txtForgotpassword);
 
         btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +62,7 @@ public class login extends AppCompatActivity {
                 String email = edtEmail.getText().toString();
                 String password = edtPassword.getText().toString();
 
+                //Authentication
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -80,5 +90,9 @@ public class login extends AppCompatActivity {
                 startActivity(new Intent(login.this, forgotpassword.class));
             }
         });
+
+        btnGoogle = findViewById(R.id.btnGoogle);
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+        gsc =  GoogleSignIn.getClient(this,gso);
     }
 }
