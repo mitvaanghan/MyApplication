@@ -21,14 +21,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".confirmpass"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".login"
+            android:name=".signIn"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

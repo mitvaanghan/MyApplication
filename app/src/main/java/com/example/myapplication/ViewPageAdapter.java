@@ -38,7 +38,6 @@ public class ViewPageAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-
         return heading.length;
     }
 

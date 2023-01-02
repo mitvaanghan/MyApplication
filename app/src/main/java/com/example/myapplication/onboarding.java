@@ -1,10 +1,12 @@
 package com.example.myapplication;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -14,17 +16,16 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.airbnb.lottie.L;
-
 public class onboarding extends AppCompatActivity {
 
     ViewPager mSlideViewPager;
     LinearLayout mDotLayout;
-    Button sikpbtn;
+    Button btnsikp , btnback , btnnext;
 
     TextView[] dots;
     ViewPageAdapter viewPageAdapter;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,16 +36,33 @@ public class onboarding extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.blue));
 
-        sikpbtn = findViewById(R.id.btnskip);
+        btnsikp = findViewById(R.id.btnskip);
+        btnback = findViewById(R.id.btnback);
+        btnnext = findViewById(R.id.btnnext);
 
-        sikpbtn.setOnClickListener(new View.OnClickListener() {
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        btnnext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        btnsikp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(onboarding.this,login.class);
+                Intent i = new Intent(onboarding.this, signIn.class);
                 startActivity(i);
                 finish();
             }
         });
+
         mSlideViewPager = (ViewPager) findViewById(R.id.slideviewpager);
         mDotLayout = (LinearLayout) findViewById(R.id.indicator);
 
@@ -56,7 +74,9 @@ public class onboarding extends AppCompatActivity {
         mSlideViewPager.addOnPageChangeListener(viewListener);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void setUpindicator(int position){
+
          dots = new TextView[3];
          mDotLayout.removeAllViews();
 
@@ -65,9 +85,10 @@ public class onboarding extends AppCompatActivity {
              dots[i] = new TextView(this);
              dots[i].setText(Html.fromHtml("&#8226"));
              dots[i].setTextSize(35);
-             //dots[i].setTextColor(getResources().getColor(R.color.in));
+             dots[i].setTextColor(getResources().getColor(R.color.inactive,getApplicationContext().getTheme()));
              mDotLayout.addView(dots[i]);
          }
+        dots[position].setTextColor(getResources().getColor(R.color.active,getApplicationContext().getTheme()));
     }
 
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
@@ -76,6 +97,7 @@ public class onboarding extends AppCompatActivity {
 
         }
 
+        @RequiresApi(api = Build.VERSION_CODES.M)
         @Override
         public void onPageSelected(int position) {
 

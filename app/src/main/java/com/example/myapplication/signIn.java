@@ -1,32 +1,32 @@
 package com.example.myapplication;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class login extends AppCompatActivity {
+public class signIn extends AppCompatActivity {
 
 
 
@@ -42,7 +42,7 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_signin);
 
         Window window = this.getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -67,10 +67,10 @@ public class login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(login.this, MainActivity.class));
-                            Toast.makeText(login.this, "Login Successful..", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(signIn.this, MainActivity.class));
+                            Toast.makeText(signIn.this, "Login Successful..", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(login.this, "Login Failed..", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(signIn.this, "Login Failed..", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -80,19 +80,59 @@ public class login extends AppCompatActivity {
         txtSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(login.this, signup.class));
+                startActivity(new Intent(signIn.this, signup.class));
             }
         });
 
         txtForgotpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(login.this, forgotpassword.class));
+                startActivity(new Intent(signIn.this, forgotpassword.class));
             }
         });
 
         btnGoogle = findViewById(R.id.btnGoogle);
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         gsc =  GoogleSignIn.getClient(this,gso);
+
+        btnGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signIn();
+            }
+        });
+    }
+
+    void signIn(){
+        Intent signInIntent = gsc.getSignInIntent();
+        startActivityForResult(signInIntent,1000);
+    }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        if(mAuth.getCurrentUser()!=null){
+//            startActivity(new Intent(signIn.this,MainActivity.class));
+//
+//        }
+//    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1000){
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+
+            try {
+                task.getResult(ApiException.class);
+                navigateToSecondActivity();
+            }catch (ApiException e){
+                Toast.makeText(this, "Something went worng", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    void navigateToSecondActivity(){
+    startActivity(new Intent(signIn.this,MainActivity.class));
     }
 }

@@ -9,4 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background">#AB363535</color>
     <color name="blue">#002868</color>
+
+    //indicator color
+    <color name="inactive">#FFFFFF</color>
+    <color name="active">#002868</color>
+
 </resources>

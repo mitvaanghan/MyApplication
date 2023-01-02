@@ -19,9 +19,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class forgotpassword extends AppCompatActivity {
 
-    EditText edtEmail;
-    Button btnsend;
-    FirebaseAuth mAuth;
+    private EditText edtEmail;
+    private Button btnsend;
+    private FirebaseAuth mAuth;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,28 +34,61 @@ public class forgotpassword extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.blue));
 
+        edtEmail = findViewById(R.id.edtEmail);
         btnsend = findViewById(R.id.btnsend);
         mAuth = FirebaseAuth.getInstance();
 
         btnsend.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+                validateData();
+            }
+        });
+    }
 
-                String email = edtEmail.getText().toString();
+    private void validateData() {
+        email = edtEmail.getText().toString();
+        if (email.isEmpty()){
+            edtEmail.setError("Required");
+        } else {
+            forgotpass();
+        }
+    }
 
-                mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
-                            startActivity(new Intent(forgotpassword.this,confirmpass.class));
-                        }
-                        else {
-                            Toast.makeText(forgotpassword.this, "Please enter your valid Email Address", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
+    private void forgotpass() {
+        mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(forgotpassword.this, "Check your Email", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(forgotpassword.this,signIn.class));
+                    finish();
+                }else {
+                    Toast.makeText(forgotpassword.this, "Something went Wrong"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 }
+
+//        btnsend.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                String email = edtEmail.getText().toString();
+//
+//                mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        if (task.isSuccessful()){
+//                            startActivity(new Intent(forgotpassword.this,signIn.class));
+//                        }
+//                        else {
+//                            Toast.makeText(forgotpassword.this, "Please enter your valid Email Address", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                });
+//
+//            }
+//        });
+
