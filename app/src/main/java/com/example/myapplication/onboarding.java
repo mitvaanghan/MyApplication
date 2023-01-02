@@ -44,6 +44,9 @@ public class onboarding extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if (getitem(0) > 0){
+                    mSlideViewPager.setCurrentItem(getitem(-1),true);
+                }
             }
         });
 
@@ -51,15 +54,20 @@ public class onboarding extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if (getitem(0) < 2){
+
+                    mSlideViewPager.setCurrentItem(getitem(1),true);
+                }
+                else {
+                    startActivity(new Intent(onboarding.this,signIn.class));
+                }
             }
         });
 
         btnsikp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(onboarding.this, signIn.class);
-                startActivity(i);
-                finish();
+                startActivity(new Intent(onboarding.this,signIn.class));
             }
         });
 
@@ -98,10 +106,22 @@ public class onboarding extends AppCompatActivity {
         }
 
         @RequiresApi(api = Build.VERSION_CODES.M)
+
+
         @Override
         public void onPageSelected(int position) {
 
             setUpindicator(position);
+
+            if (position > 0){
+
+                btnback.setVisibility(View.VISIBLE);
+
+            }else {
+
+                btnback.setVisibility(View.INVISIBLE);
+
+            }
         }
 
         @Override
@@ -111,6 +131,7 @@ public class onboarding extends AppCompatActivity {
     };
 
     private int getitem(int i){
+
         return  mSlideViewPager.getCurrentItem() + i;
     }
 }

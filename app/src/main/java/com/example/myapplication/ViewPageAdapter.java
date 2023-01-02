@@ -20,7 +20,7 @@ public class ViewPageAdapter extends PagerAdapter {
       R.drawable.payments
     };
 
-    int heading[] = {
+    int headings[] = {
       R.string.heading_0ne,
       R.string.heading_two,
       R.string.heading_Three
@@ -38,7 +38,7 @@ public class ViewPageAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return heading.length;
+        return headings.length;
     }
 
     @Override
@@ -59,7 +59,7 @@ public class ViewPageAdapter extends PagerAdapter {
         TextView slideDescription = (TextView) view.findViewById(R.id.textdescription);
 
         slidetitleimage.setImageResource(images[position]);
-        slideheading.setText(heading[position]);
+        slideheading.setText(headings[position]);
         slideDescription.setText(description[position]);
 
         container.addView(view);
