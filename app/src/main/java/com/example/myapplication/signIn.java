@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,15 +30,11 @@ import com.google.firebase.auth.FirebaseAuth;
 public class signIn extends AppCompatActivity {
 
 
-
     EditText edtEmail, edtPassword;
     Button btnSignin;
-    TextView txtSignup , txtForgotpassword;
+    TextView txtSignup, txtForgotpassword;
     FirebaseAuth mAuth;
-
-    GoogleSignInOptions gso;
-    GoogleSignInClient gsc;
-    ImageButton btnGoogle;
+    ImageView btnGoogle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +52,7 @@ public class signIn extends AppCompatActivity {
         edtPassword = findViewById(R.id.edtPassword);
         txtSignup = findViewById(R.id.txtSignup);
         txtForgotpassword = findViewById(R.id.txtForgotpassword);
+        btnGoogle = findViewById(R.id.btnGoogle);
 
         btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +75,14 @@ public class signIn extends AppCompatActivity {
             }
         });
 
+        btnGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(signIn.this,GoogleSignInActivity.class);
+                startActivity(intent);
+            }
+        });
+
         txtSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,24 +97,7 @@ public class signIn extends AppCompatActivity {
             }
         });
 
-        btnGoogle = findViewById(R.id.btnGoogle);
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        gsc =  GoogleSignIn.getClient(this,gso);
-
-        btnGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signIn();
-            }
-        });
-    }
-
-    void signIn(){
-        Intent signInIntent = gsc.getSignInIntent();
-        startActivityForResult(signInIntent,1000);
-    }
-
-//    @Override
+        //    @Override
 //    protected void onStart() {
 //        super.onStart();
 //        if(mAuth.getCurrentUser()!=null){
@@ -117,22 +106,5 @@ public class signIn extends AppCompatActivity {
 //        }
 //    }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1000){
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-
-            try {
-                task.getResult(ApiException.class);
-                navigateToSecondActivity();
-            }catch (ApiException e){
-                Toast.makeText(this, "Something went worng", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    void navigateToSecondActivity(){
-    startActivity(new Intent(signIn.this,MainActivity.class));
     }
 }
