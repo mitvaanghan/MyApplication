@@ -138,20 +138,20 @@
         app:layout_constraintTop_toBottomOf="@+id/txtForgotpassword" />
 
     <ImageView
-        android:id="@+id/btnGoogle"
+        android:id="@+id/imgGoogle"
         android:layout_width="70dp"
         android:layout_height="55dp"
         android:layout_marginStart="180dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="#0000"
         android:src="@drawable/googlelogo"
-        app:layout_constraintEnd_toStartOf="@+id/btnFacebook"
+        app:layout_constraintEnd_toStartOf="@+id/imgFacebook"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/or" />
 
 
     <ImageView
-        android:id="@+id/btnFacebook"
+        android:id="@+id/imgFacebook"
         android:layout_width="70dp"
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
@@ -159,7 +159,7 @@
         android:backgroundTint="#0000"
         android:src="@drawable/facebooklogo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnGoogle"
+        app:layout_constraintStart_toEndOf="@+id/imgGoogle"
         app:layout_constraintTop_toBottomOf="@+id/or" />
 
     <TextView
@@ -174,7 +174,7 @@
         android:textStyle="bold"
         android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGoogle" />
+        app:layout_constraintTop_toBottomOf="@+id/imgGoogle" />
 
     <TextView
         android:id="@+id/txtSignup"
@@ -188,6 +188,6 @@
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFacebook" />
+        app:layout_constraintTop_toBottomOf="@+id/imgFacebook" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

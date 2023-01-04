@@ -1,11 +1,14 @@
 package com.example.myapplication;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -28,6 +31,7 @@ public class GoogleSignInActivity extends signIn{
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     ProgressDialog progressDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,10 +67,12 @@ public class GoogleSignInActivity extends signIn{
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
+                Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
-                Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.w(TAG, "Google sign in failed", e);
+               // Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
                 finish();
             }
@@ -81,13 +87,15 @@ public class GoogleSignInActivity extends signIn{
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithCredential:success");
                             progressDialog.dismiss();
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithCredential:failure", task.getException());
                             progressDialog.dismiss();
-                            Toast.makeText(GoogleSignInActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(GoogleSignInActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
                             finish();
                         }
                     }
@@ -95,8 +103,12 @@ public class GoogleSignInActivity extends signIn{
     }
 
     private void updateUI(FirebaseUser user) {
-        Intent intent = new Intent(GoogleSignInActivity.this,MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+
+        if (user!=null)
+            startActivity(new Intent(this,MainActivity.class));
+
+        //        Intent intent = new Intent(GoogleSignInActivity.this,MainActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+//        startActivity(intent);
     }
 }

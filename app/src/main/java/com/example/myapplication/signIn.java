@@ -34,7 +34,7 @@ public class signIn extends AppCompatActivity {
     Button btnSignin;
     TextView txtSignup, txtForgotpassword;
     FirebaseAuth mAuth;
-    ImageView btnGoogle;
+    ImageView imgGoogle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class signIn extends AppCompatActivity {
         edtPassword = findViewById(R.id.edtPassword);
         txtSignup = findViewById(R.id.txtSignup);
         txtForgotpassword = findViewById(R.id.txtForgotpassword);
-        btnGoogle = findViewById(R.id.btnGoogle);
+        imgGoogle = findViewById(R.id.imgGoogle);
 
         btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +75,7 @@ public class signIn extends AppCompatActivity {
             }
         });
 
-        btnGoogle.setOnClickListener(new View.OnClickListener() {
+        imgGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(signIn.this,GoogleSignInActivity.class);
