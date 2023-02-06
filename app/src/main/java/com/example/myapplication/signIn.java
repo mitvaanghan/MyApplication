@@ -1,10 +1,5 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,20 +7,19 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.ApiException;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class signIn extends AppCompatActivity {
 
@@ -34,7 +28,9 @@ public class signIn extends AppCompatActivity {
     Button btnSignin;
     TextView txtSignup, txtForgotpassword;
     FirebaseAuth mAuth;
+    FirebaseDatabase database;
     ImageView imgGoogle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +43,11 @@ public class signIn extends AppCompatActivity {
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.blue));
 
         mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance("https://goodsment-default-rtdb.firebaseio.com/");
         btnSignin = findViewById(R.id.btnSignin);
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
+      //  imgFacebook = findViewById(R.id.imgFacebook);
         txtSignup = findViewById(R.id.txtSignup);
         txtForgotpassword = findViewById(R.id.txtForgotpassword);
         imgGoogle = findViewById(R.id.imgGoogle);
@@ -97,12 +95,14 @@ public class signIn extends AppCompatActivity {
             }
         });
 
-        //    @Override
+
+
+//    @Override
 //    protected void onStart() {
 //        super.onStart();
 //        if(mAuth.getCurrentUser()!=null){
-//            startActivity(new Intent(signIn.this,MainActivity.class));
-//
+//            Intent intent1 = new Intent(signIn.this,MainActivity.class);
+//            intent1.putExtra("name", Objects.requireNonNull(user.getDisplayName()));
 //        }
 //    }
 
