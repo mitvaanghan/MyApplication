@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/adamina"
         android:text="@string/login_to_your_account"
         android:textColor='@color/black'
@@ -62,6 +62,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
+    <ImageView
+        android:id="@+id/imgshowhidepass"
+        android:layout_width="30dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edtPassword" />
+
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="match_parent"
@@ -70,10 +79,10 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/input_bg"
-        android:drawableStart="@drawable/ic_security"
+        android:drawableStart="@drawable/ic_lock"
         android:drawablePadding="10dp"
-        android:fontFamily="@font/adamina"
         android:ems="10"
+        android:fontFamily="@font/adamina"
         android:hint="@string/password"
         android:inputType="textPassword"
         android:paddingStart="20dp"
@@ -82,7 +91,7 @@
         android:paddingBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail"/>
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
 
     <Button
