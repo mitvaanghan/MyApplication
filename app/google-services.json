@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "493278305811",
+    "firebase_url": "https://goodsment-default-rtdb.firebaseio.com",
     "project_id": "goodsment",
     "storage_bucket": "goodsment.appspot.com"
   },

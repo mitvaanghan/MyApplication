@@ -21,7 +21,7 @@
     <string name="back">Back</string>
     <string name="next">Next</string>
     <string name="todo">TODO</string>
-    <string name="please_enter_your_e_mail_address_to_recieve_a_verification_code">Please Enter Your E-Mail Address To Recieve a Verification Code.</string>
+    <string name="please_enter_your_e_mail_address_to_recieve_a_verification_code">Please Enter Your E-Mail Address To Recieve a Verification Code on gmail.</string>
     <string name="e_mail">E-Mail</string>
     <string name="send">Send</string>
     <string name="forgot_password">Forgot Password?</string>
@@ -35,5 +35,19 @@
     <string name="signup">Signup</string>
     <string name="signin">Sign in</string>
     <string name="already_have_an_account">Already have an Account?</string>
+    <string name="labour_management">Labour Management</string>
+    <string name="home">Home</string>
+    <string name="vehicle_owner">Vehicle Owner</string>
+    <string name="user">User</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="refund_return_policy"><![CDATA[Refund & Return Policy]]></string>
+    <string name="logout">Logout</string>
 
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="report">Report</string>
+    <string name="enter_email_address">Enter Email Address</string>
+    <string name="enter_password">Enter Password</string>
 </resources>

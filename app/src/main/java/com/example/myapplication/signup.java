@@ -23,7 +23,7 @@ public class signup extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     EditText edtEmail, edtPassword;
-    Button btnSignup , btnbackarrow;
+    Button btnSignup, btnbackarrow;
     TextView txtSignin;
 
     @Override
@@ -65,14 +65,13 @@ public class signup extends AppCompatActivity {
                 });
 
 
-
             }
         });
 
         btnbackarrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(signup.this,signIn.class));
+                startActivity(new Intent(signup.this, signIn.class));
             }
         });
 

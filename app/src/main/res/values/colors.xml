@@ -10,6 +10,7 @@
     <color name="background">#AB363535</color>
     <color name="blue">#002868</color>
 
+    <color name="bg">#FFE8E7EA</color>
     //indicator color
     <color name="inactive">#C4C4C4</color>
     <color name="active">#002868</color>

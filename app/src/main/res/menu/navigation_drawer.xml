@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+    <item android:id="@+id/nav_home"
+        android:title="@string/home"
+        android:icon="@drawable/ic_home">
+    </item>
+
+    <item android:id="@+id/nav_vOwner"
+        android:title="@string/vehicle_owner"
+        android:icon="@drawable/ic_owner">
+    </item>
+
+    <item android:id="@+id/nav_user"
+        android:title="@string/user"
+        android:icon="@drawable/ic_user">
+    </item>
+
+    <item android:id="@+id/nav_lmanagement"
+        android:title="@string/labour_management"
+        android:icon="@drawable/ic_labour">
+    </item>
+
+    <item android:title="Terms , Condition , policies">
+
+        <menu>
+            <item android:id="@+id/nav_pPolicy"
+                android:title="@string/privacy_policy"
+                android:icon="@drawable/ic_pprivacy">
+            </item>
+
+            <item android:id="@+id/nav_rPolicy"
+                android:title="@string/refund_return_policy"
+                android:icon="@drawable/ic_rpolicy">
+            </item>
+
+            <item android:id="@+id/nav_report"
+                android:title="@string/report"
+                android:icon="@drawable/ic_report">
+            </item>
+
+        </menu>
+    </item>
+
+    </group>
+
+    <item android:title="">
+        <menu>
+             <item android:id="@+id/nav_logout"
+                    android:title="@string/logout"
+                    android:icon="@drawable/ic_logout">
+              </item>
+        </menu>
+    </item>
+
+</menu>

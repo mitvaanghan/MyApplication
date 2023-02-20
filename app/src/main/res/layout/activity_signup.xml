@@ -36,6 +36,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.066" />
 
+    <RelativeLayout
+        android:layout_width="392dp"
+        android:layout_height="600dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/input_bg"
+        android:backgroundTint="@color/bg"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
@@ -152,7 +166,7 @@
         android:hint="@string/password"
         android:inputType="textPassword"
         android:background="@drawable/input_bg"
-        android:drawableStart="@drawable/ic_security"
+        android:drawableStart="@drawable/ic_lock"
         android:fontFamily="@font/adamina"
         android:drawablePadding="10dp"
         android:ems="10"
