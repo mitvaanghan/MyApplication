@@ -20,7 +20,7 @@ public class onboarding extends AppCompatActivity {
 
     ViewPager mSlideViewPager;
     LinearLayout mDotLayout;
-    Button btnsikp , btnback , btnnext;
+    Button btnsikp ;
 
     TextView[] dots;
     ViewPageAdapter viewPageAdapter;
@@ -37,32 +37,32 @@ public class onboarding extends AppCompatActivity {
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.blue));
 
         btnsikp = findViewById(R.id.btnskip);
-        btnback = findViewById(R.id.btnback);
-        btnnext = findViewById(R.id.btnnext);
-
-        btnback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (getitem(0) > 0){
-                    mSlideViewPager.setCurrentItem(getitem(-1),true);
-                }
-            }
-        });
-
-        btnnext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (getitem(0) < 2){
-
-                    mSlideViewPager.setCurrentItem(getitem(1),true);
-                }
-                else {
-                    startActivity(new Intent(onboarding.this,signIn.class));
-                }
-            }
-        });
+//        btnback = findViewById(R.id.btnback);
+//        btnnext = findViewById(R.id.btnnext);
+//
+//        btnback.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                if (getitem(0) > 0){
+//                    mSlideViewPager.setCurrentItem(getitem(-1),true);
+//                }
+//            }
+//        });
+//
+//        btnnext.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                if (getitem(0) < 2){
+//
+//                    mSlideViewPager.setCurrentItem(getitem(1),true);
+//                }
+//                else {
+//                    startActivity(new Intent(onboarding.this,signIn.class));
+//                }
+//            }
+//        });
 
         btnsikp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,15 +113,15 @@ public class onboarding extends AppCompatActivity {
 
             setUpindicator(position);
 
-            if (position > 0){
-
-                btnback.setVisibility(View.VISIBLE);
-
-            }else {
-
-                btnback.setVisibility(View.INVISIBLE);
-
-            }
+//            if (position > 0){
+//
+//                btnback.setVisibility(View.VISIBLE);
+//
+//            }else {
+//
+//                btnback.setVisibility(View.INVISIBLE);
+//
+//            }
         }
 
         @Override

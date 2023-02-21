@@ -18,11 +18,10 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            app:theme="@style/WhiteDrawerIconStyle"
             android:elevation="4dp"
             android:background="@color/blue"
-            app:titleTextColor="@android:color/white"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+            app:titleTextColor="@android:color/white"/>
 
         <FrameLayout
             android:id="@+id/fragment"

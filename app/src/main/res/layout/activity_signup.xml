@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".signup">
 
-    <Button
-        android:id="@+id/btnbackarrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_arrow_back"
-        android:background="#00000000"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="6dp"
-        tools:ignore="MissingConstraints" />
-
     <TextView
         android:id="@+id/textView1"
         android:layout_width="296dp"
@@ -38,7 +28,7 @@
 
     <RelativeLayout
         android:layout_width="392dp"
-        android:layout_height="600dp"
+        android:layout_height="800dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="10dp"
@@ -48,7 +38,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
-
 
     <TextView
         android:id="@+id/textView4"
@@ -65,119 +54,134 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
-    <EditText
-        android:id="@+id/edtUname"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtinputname"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
-        android:background="@drawable/input_bg"
-        android:drawableStart="@drawable/ic_person"
-        android:fontFamily="@font/adamina"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="@string/name"
-        android:inputType="textPersonName"
-        android:paddingStart="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingBottom="10dp"
+        android:hint="@string/enter_name"
+        app:boxStrokeColor="@color/blue"
+        app:hintTextColor="@color/blue"
+        app:startIconDrawable="@drawable/ic_person"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
 
-    <EditText
-        android:id="@+id/edtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
-        android:inputType="textEmailAddress"
-        android:hint="@string/email"
-        android:background="@drawable/input_bg"
-        android:fontFamily="@font/adamina"
-        android:drawableStart="@drawable/ic_email"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:paddingStart="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtUname"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtUname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/adamina"
+            android:inputType="textPersonName"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <EditText
-        android:id="@+id/edtCnumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
-        android:inputType="phone"
-        android:hint="@string/contact_number"
-        android:background="@drawable/input_bg"
-        android:drawableStart="@drawable/ic_phone"
-        android:fontFamily="@font/adamina"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:paddingStart="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/edtCity"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtinputemail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
-        android:inputType="text"
-        android:hint="@string/city"
-        android:background="@drawable/input_bg"
-        android:drawableStart="@drawable/ic_city"
-        android:fontFamily="@font/adamina"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:paddingStart="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingBottom="10dp"
+        android:hint="@string/enter_email"
+        app:startIconDrawable="@drawable/ic_email"
+        app:boxStrokeColor="@color/blue"
+        app:hintTextColor="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCnumber" />
+        app:layout_constraintTop_toBottomOf="@+id/txtinputname">
 
-    <EditText
-        android:id="@+id/edtPassword"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/adamina"
+            android:inputType="textEmailAddress"
+            app:layout_constraintTop_toBottomOf="@+id/edtUname" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtinputcnumber"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:background="@drawable/input_bg"
-        android:drawableStart="@drawable/ic_lock"
-        android:fontFamily="@font/adamina"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:paddingStart="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingBottom="10dp"
+        android:layout_marginTop="10dp"
+        app:boxStrokeColor="@color/blue"
+        app:hintTextColor="@color/blue"
+        app:startIconDrawable="@drawable/ic_phone"
+        android:hint="@string/enter_contact_number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtCity" />
+        app:layout_constraintTop_toBottomOf="@+id/txtinputemail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtCnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/adamina"
+            android:inputType="phone"
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtinputcity"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp"
+        app:boxStrokeColor="@color/blue"
+        app:hintTextColor="@color/blue"
+        android:hint="@string/enter_city"
+        app:startIconDrawable="@drawable/ic_city"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtinputcnumber">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/adamina"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@+id/edtCnumber" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtinputpass"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:boxStrokeColor="@color/blue"
+        app:hintTextColor="@color/blue"
+        app:startIconDrawable="@drawable/ic_lock"
+        android:hint="@string/enter_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtinputcity">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/adamina"
+            android:inputType="textPassword"
+            app:layout_constraintTop_toBottomOf="@+id/edtCity" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btnSignup"
@@ -187,14 +191,14 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="105dp"
         android:background="@drawable/btn_bg"
-        android:backgroundTint="@color/blue"
-        android:text="@string/sign_up"
+        style="@style/ButtonStyle"
         android:fontFamily="@font/adamina"
-        android:textStyle="bold"
+        android:text="@string/sign_up"
         android:textColor="@color/white"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/txtinputpass" />
 
 
     <TextView
@@ -202,7 +206,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="70dp"
         android:fontFamily="@font/adamina"
         android:text="@string/already_have_an_account"
@@ -219,7 +223,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="205dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/adamina"
         android:text="@string/signin"
         android:textColor="@color/blue"

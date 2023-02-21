@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents" />
+
+
+    <style name="ButtonStyle">
+        <item name="android:colorPrimary">@color/blue</item>
+
+        <item name="backgroundTint">@color/blue</item>
+    </style>
+
+
+    <style name="WhiteDrawerIconStyle" parent="Theme.MaterialComponents">
+        <item name="color">@android:color/white</item>
+    </style>
+
 </resources>

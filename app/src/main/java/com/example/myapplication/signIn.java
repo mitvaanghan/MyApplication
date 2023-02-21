@@ -33,18 +33,18 @@ public class signIn extends AppCompatActivity {
     TextView txtSignup, txtForgotpassword;
     FirebaseAuth mAuth;
     FirebaseDatabase database;
-    ImageView imgGoogle;
+  //  ImageView imgGoogle;
 
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if(mAuth.getCurrentUser()!=null){
-            startActivity(new Intent(signIn.this,MainActivity.class));
-            finish();
-        }
-        super.onStart();
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        if(mAuth.getCurrentUser()!=null){
+//            startActivity(new Intent(signIn.this,MainActivity.class));
+//            finish();
+//        }
+//        super.onStart();
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,25 +61,10 @@ public class signIn extends AppCompatActivity {
         btnSignin = findViewById(R.id.btnSignin);
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
-      //  imgFacebook = findViewById(R.id.imgFacebook);
-        txtSignup = findViewById(R.id.txtSignup);
+        txtSignup = findViewById(R.id.txtSingup);
         txtForgotpassword = findViewById(R.id.txtForgotpassword);
-        imgGoogle = findViewById(R.id.imgGoogle);
+    //    imgGoogle = findViewById(R.id.imgGoogle);
 
-//        ImageView imgshowhidepass = findViewById(R.id.imgshowhidepass);
-//        imgshowhidepass.setImageResource(R.drawable.ic_hide);
-//        imgshowhidepass.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(edtPassword.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
-//                    edtPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-//                    imgshowhidepass.setImageResource(R.drawable.ic_hide);
-//                }else {
-//                    edtPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-//                    imgshowhidepass.setImageResource(R.drawable.ic_view);
-//                }
-//            }
-//        });
         btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,13 +86,13 @@ public class signIn extends AppCompatActivity {
             }
         });
 
-        imgGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(signIn.this,GoogleSignInActivity.class);
-                startActivity(intent);
-            }
-        });
+//        imgGoogle.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(signIn.this,GoogleSignInActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         txtSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,23 +109,4 @@ public class signIn extends AppCompatActivity {
         });
 
     }
-
-//    public void ShowHidePass(View view) {
-//        if(view.getId()==R.id.imgshowhidepass){
-//
-//            if(edtPassword.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
-//                ((ImageView)(view)).setImageResource(R.drawable.ic_hide);
-//
-//                //Show Password
-//                edtPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-//            }
-//            else{
-//                ((ImageView)(view)).setImageResource(R.drawable.ic_view);
-//
-//                //Hide Password
-//                edtPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-//
-//            }
-//        }
-//    }
 }

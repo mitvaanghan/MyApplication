@@ -40,7 +40,7 @@ public class signup extends AppCompatActivity {
         edtEmail = findViewById(R.id.edtEmail);
         edtPassword = findViewById(R.id.edtPassword);
         btnSignup = findViewById(R.id.btnSignup);
-        btnbackarrow = findViewById(R.id.btnbackarrow);
+      //  btnbackarrow = findViewById(R.id.btnbackarrow);
         txtSignin = findViewById(R.id.txtsignin);
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
@@ -68,12 +68,12 @@ public class signup extends AppCompatActivity {
             }
         });
 
-        btnbackarrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(signup.this, signIn.class));
-            }
-        });
+//        btnbackarrow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(signup.this, signIn.class));
+//            }
+//        });
 
 
         txtSignin.setOnClickListener(new View.OnClickListener() {
