@@ -12,11 +12,12 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SplashActivity extends AppCompatActivity {
 
     LottieAnimationView animationView;
-    @SuppressLint("MissingInflatedId")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +33,11 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 animationView.playAnimation();
-                startActivity(new Intent(SplashActivity.this,onboarding.class));
+                startActivity(new Intent(SplashActivity.this,signIn.class));
                 finish();
             }
         },3000);
+
     }
+
 }

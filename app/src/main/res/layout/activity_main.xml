@@ -9,26 +9,27 @@
     android:fitsSystemWindows="true"
     android:id="@+id/drawerLayout">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:theme="@style/WhiteDrawerIconStyle"
-            android:elevation="4dp"
-            android:background="@color/blue"
-            app:titleTextColor="@android:color/white"/>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
 
         <FrameLayout
             android:id="@+id/fragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
 
-    </LinearLayout>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:theme="@style/WhiteDrawerIconStyle"
+                android:elevation="4dp"
+                android:background="@color/blue"
+                app:titleTextColor="@android:color/white"/>
+        </FrameLayout>
+
+<!--    </LinearLayout>-->
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
@@ -37,6 +38,7 @@
         app:menu="@menu/navigation_drawer"
         app:headerLayout="@layout/drawer_header"
         android:layout_gravity="start"
+        app:itemTextColor="@color/blue"
         app:itemIconTint="@color/blue"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

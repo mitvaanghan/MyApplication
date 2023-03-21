@@ -19,16 +19,18 @@ import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
 
-public class signIn extends AppCompatActivity {
+public class
+signIn extends AppCompatActivity {
 
 
-    EditText edtEmail, edtPassword;
+    private TextInputLayout txtinputemail, txtinputpass;
     Button btnSignin;
     TextView txtSignup, txtForgotpassword;
     FirebaseAuth mAuth;
@@ -36,15 +38,15 @@ public class signIn extends AppCompatActivity {
   //  ImageView imgGoogle;
 
 
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        if(mAuth.getCurrentUser()!=null){
-//            startActivity(new Intent(signIn.this,MainActivity.class));
-//            finish();
-//        }
-//        super.onStart();
-//    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(mAuth.getCurrentUser()!=null){
+            startActivity(new Intent(signIn.this,MainActivity.class));
+            finish();
+        }
+        super.onStart();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +58,12 @@ public class signIn extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.blue));
 
+        //  getSupportActionBar().setTitle("Login");
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance("https://goodsment-default-rtdb.firebaseio.com/");
         btnSignin = findViewById(R.id.btnSignin);
-        edtEmail = findViewById(R.id.edtEmail);
-        edtPassword = findViewById(R.id.edtPassword);
+        txtinputemail = (TextInputLayout) findViewById(R.id.txtinputemail);
+        txtinputpass =(TextInputLayout) findViewById(R.id.txtinputpass);
         txtSignup = findViewById(R.id.txtSingup);
         txtForgotpassword = findViewById(R.id.txtForgotpassword);
     //    imgGoogle = findViewById(R.id.imgGoogle);
@@ -68,31 +71,56 @@ public class signIn extends AppCompatActivity {
         btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = edtEmail.getText().toString();
-                String password = edtPassword.getText().toString();
+                String email = txtinputemail.getEditText().getText().toString();
+                String password = txtinputpass.getEditText().getText().toString();
+                String em = ("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+                String pass = "^(?=.*[0-9])(?=.*[A-Z])(?=.* [@#$%^&+=!])(?=\\S+$).{4,}$";
 
-                //Authentication
-                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            startActivity(new Intent(signIn.this, MainActivity.class));
-                            Toast.makeText(signIn.this, "Login Successful..", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(signIn.this, "Login Failed..", Toast.LENGTH_SHORT).show();
+                if (!email.isEmpty()) {
+                    txtinputemail.setError(null);
+                    txtinputemail.setErrorEnabled(false);
+                    if (!password.isEmpty()){
+                        txtinputpass.setError(null);
+                        txtinputpass.setErrorEnabled(false);
+                        if (email.matches(em)) {
+                            txtinputemail.setError(null);
+                            txtinputemail.setErrorEnabled(false);
+                            if (password.length() >8) {
+                                txtinputpass.setError(null);
+                                txtinputpass.setErrorEnabled(false);
+
+                                //Authentication
+                                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        if (task.isSuccessful()) {
+                                            startActivity(new Intent(signIn.this, MainActivity.class));
+                                            Toast.makeText(signIn.this, "Login Successful..", Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Toast.makeText(signIn.this, "Login Failed..", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                            }
+                            else {
+                                txtinputpass.setError("Please! Enter Valid Password");
+                            }
+                        }
+                        else {
+                            txtinputemail.setError("Please! Enter Valid Email Address");
                         }
                     }
-                });
+                    else {
+                        txtinputpass.setError("Please! Enter Password");
+                    }
+                }
+                else {
+                    txtinputemail.setError("Please! Enter Email Address");
+                }
             }
         });
 
-//        imgGoogle.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(signIn.this,GoogleSignInActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+
 
         txtSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,3 +138,14 @@ public class signIn extends AppCompatActivity {
 
     }
 }
+
+
+
+
+//        imgGoogle.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(signIn.this,GoogleSignInActivity.class);
+//                startActivity(intent);
+//            }
+//        });

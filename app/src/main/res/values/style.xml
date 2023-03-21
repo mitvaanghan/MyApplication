@@ -15,4 +15,7 @@
         <item name="color">@android:color/white</item>
     </style>
 
+    <style name="MyTextInputEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textCursorDrawable">@drawable/cursorcolor</item>
+    </style>
 </resources>

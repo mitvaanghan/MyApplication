@@ -17,10 +17,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Objects;
+
 public class forgotpassword extends AppCompatActivity {
 
     private EditText edtEmail;
-    private Button btnsend;
     private FirebaseAuth mAuth;
     private String email;
 
@@ -35,7 +36,7 @@ public class forgotpassword extends AppCompatActivity {
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.blue));
 
         edtEmail = findViewById(R.id.edtEmail);
-        btnsend = findViewById(R.id.btnsend);
+        Button btnsend = findViewById(R.id.btnsend);
         mAuth = FirebaseAuth.getInstance();
 
         btnsend.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +65,7 @@ public class forgotpassword extends AppCompatActivity {
                     startActivity(new Intent(forgotpassword.this,signIn.class));
                     finish();
                 }else {
-                    Toast.makeText(forgotpassword.this, "Something went Wrong"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(forgotpassword.this, "Something went Wrong"+ Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });

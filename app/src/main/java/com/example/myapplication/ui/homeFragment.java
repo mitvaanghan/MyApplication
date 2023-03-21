@@ -2,65 +2,123 @@ package com.example.myapplication.ui;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.myapplication.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link homeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
+
 public class homeFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public homeFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment homeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static homeFragment newInstance(String param1, String param2) {
-        homeFragment fragment = new homeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+        ImageSlider imageSlider;
+        CardView cardtotalrevenue , cardtotalvehicleowner , cardtotalride , cardtotaluser;
+        TextView txttotalrevenue , txttotalvehicleowner , txttotaluser , txttotalrides;
+        FirebaseDatabase firebaseDatabase;
+        DatabaseReference datauser , datavehicleowner;
+        int conutuser =0;
+        int conutvehicleowner =0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        cardtotalrevenue = view.findViewById(R.id.cardtRevenue);
+        cardtotalvehicleowner = view.findViewById(R.id.cardtVehicleOwner);
+        cardtotalride = view.findViewById(R.id.cardtRide);
+        cardtotaluser = view.findViewById(R.id.cardtUser);
+
+        imageSlider =view.findViewById(R.id.imgslider);
+
+        ArrayList<SlideModel> imagelist = new ArrayList<>();
+        imagelist.add(new SlideModel(R.drawable.imgslider1, ScaleTypes.FIT));
+        imagelist.add(new SlideModel(R.drawable.imgslider2,ScaleTypes.FIT));
+
+        imageSlider.setImageList(imagelist,ScaleTypes.FIT);
+
+        txttotalvehicleowner = view.findViewById(R.id.txttotalVOwner);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        datavehicleowner = firebaseDatabase.getReference("VehicalOwner/Registration");
+        datavehicleowner.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    conutvehicleowner = (int) snapshot.getChildrenCount();
+                    txttotalvehicleowner.setText(String.valueOf(conutvehicleowner));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        txttotaluser = view.findViewById(R.id.txttotalUSer);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        datauser = firebaseDatabase.getReference("User/Registration");
+        datauser.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    conutuser = (int) snapshot.getChildrenCount();
+                    txttotaluser.setText(String.valueOf(conutuser));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        cardtotalvehicleowner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        cardtotalrevenue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        cardtotalride.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        cardtotaluser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        return view;
     }
+
 }

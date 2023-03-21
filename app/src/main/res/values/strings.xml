@@ -14,15 +14,15 @@
 
     <string name="login_to_your_account">Login to your Account</string>
     <string name="goodsment">GoodsMent</string>
-    <string name="sign_in">signin</string>
+    <string name="sign_in">SIGN IN</string>
     <string name="skip">Skip</string>
     <string name="back">Back</string>
     <string name="next">Next</string>
-    <string name="please_enter_your_e_mail_address_to_recieve_a_verification_code">Please Enter Your E-Mail Address To Recieve a Verification Code on gmail.</string>
+    <string name="please_enter_your_e_mail_address_to_recieve_a_verification_code">Please Enter Your E-Mail Address and  Receive  link on this email address.</string>
     <string name="send">Send</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="or_sign_in_with">- Or sign in with -</string>
-    <string name="sign_up">Sign up</string>
+    <string name="sign_up">SIGN UP</string>
     <string name="create_your_account">Create your Account</string>
     <string name="don_t_have_an_account">Don\'t have an Account ?</string>
     <string name="signup">Signup</string>
@@ -46,4 +46,39 @@
     <string name="enter_name">Enter Name</string>
     <string name="enter_contact_number">Enter Contact Number</string>
     <string name="enter_city">Enter City</string>
+
+    <string name="privacypolicy">https://doc-hosting.flycricket.io/goodsment-privacy-policy/2de549b2-71d9-4c36-9ae5-2e69edabe1d8/privacy</string>
+    <string name="fast_fast"><![CDATA[Fast & Safe]]></string>
+    <string name="total_vehicle_owner">Total Vehicle Owner</string>
+    <string name="total_revenue">Total Revenue</string>
+    <string name="total_rides">Total Rides</string>
+    <string name="total_user">Total User</string>
+    <string name="_100000">100000+</string>
+    <string name="_100">100+</string>
+    <string name="_200">200+</string>
+    <string name="_1000">1000+</string>
+    <string name="name">Name</string>-->
+    <string name="email">Email</string>-->
+    <string name="contact">Contact</string>
+    <string name="email_card_txt">email</string>
+    <string name="name_card_txt">name</string>
+    <string name="name_txt">Name :</string>
+    <string name="email_txt">Email :</string>
+    <string name="city_txt">City :</string>
+    <string name="city_card_txt">city</string>
+    <string name="contact_txt">Contact :</string>
+    <string name="contact_card_txt">contact </string>
+    <string name="adhracard_number_txt">Adhracard Number :</string>
+    <string name="adhar_card_txt">adhar</string>
+    <string name="address_txt">Address :</string>
+    <string name="address_card_txt">address</string>
+    <string name="name_labour_txt">Name :</string>
+    <string name="name_card_labour_txt">name</string>
+    <string name="contact_labour_txt">Conatct :</string>
+    <string name="contact_card_labour_txt">contct</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="update">Update</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="city">City</string>
+
 </resources>

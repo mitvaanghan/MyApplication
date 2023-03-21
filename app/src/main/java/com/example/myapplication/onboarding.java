@@ -134,4 +134,6 @@ public class onboarding extends AppCompatActivity {
 
         return  mSlideViewPager.getCurrentItem() + i;
     }
+
+
 }
