@@ -15,7 +15,8 @@
         tools:targetApi="33">
         <activity
             android:name=".adminProfile"
-            android:exported="false" />
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".GoogleSignInActivity"
             android:exported="true">

@@ -6,19 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".adminProfile">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardedit"
         android:layout_width="match_parent"
         android:layout_height="600dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="15dp"
         android:backgroundTint="#f9fafb"
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,8 +43,8 @@
                 android:gravity="center"
                 android:text="@string/edit_profile"
                 android:textColor="@color/blue"
-                android:textStyle="bold"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtinputname"
@@ -146,19 +156,19 @@
 
             <Button
                 android:id="@+id/btnupdate"
+                style="@style/ButtonStyle"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
-                android:text="@string/update"
-                android:layout_marginTop="50dp"
                 android:layout_marginStart="110dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="100dp"
                 android:background="@drawable/input_bg"
-                style="@style/ButtonStyle"
                 android:fontFamily="@font/adamina"
-                android:textStyle="bold"
+                android:text="@string/update"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
