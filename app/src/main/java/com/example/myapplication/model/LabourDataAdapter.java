@@ -68,7 +68,7 @@ public class LabourDataAdapter extends RecyclerView.Adapter<LabourDataAdapter.My
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            progressBar = itemView.findViewById(R.id.progressBar);
+          //  progressBar = itemView.findViewById(R.id.progressBar);
             card = itemView.findViewById(R.id.recCard);
             name = itemView.findViewById(R.id.recNameLabour);
             aadhar = itemView.findViewById(R.id.recAdharCard);
