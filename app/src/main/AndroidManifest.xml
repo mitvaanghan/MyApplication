@@ -14,9 +14,13 @@
         android:theme="@style/Theme.MaterialComponents.Light"
         tools:targetApi="33">
         <activity
+            android:name=".manageProfile"
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
+        <activity
             android:name=".adminProfile"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name=".GoogleSignInActivity"
             android:exported="true">

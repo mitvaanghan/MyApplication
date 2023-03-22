@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
        headerView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               startActivity(new Intent(MainActivity.this,adminProfile.class));
+               startActivity(new Intent(MainActivity.this,manageProfile.class));
            }
        });
 

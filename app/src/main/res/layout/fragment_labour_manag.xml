@@ -5,6 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.labourManagFragment">
 
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progressBar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:max="100"-->
+<!--        android:progress="60"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewLabour"

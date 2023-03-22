@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import java.util.List;
 
 public class LabourDataAdapter extends RecyclerView.Adapter<LabourDataAdapter.MyViewHolder>{
 
+    static ProgressBar progressBar;
     private final Context context;
     private final List<LabourClass> labourClassList;
 
@@ -66,6 +68,7 @@ public class LabourDataAdapter extends RecyclerView.Adapter<LabourDataAdapter.My
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            progressBar = itemView.findViewById(R.id.progressBar);
             card = itemView.findViewById(R.id.recCard);
             name = itemView.findViewById(R.id.recNameLabour);
             aadhar = itemView.findViewById(R.id.recAdharCard);
@@ -75,4 +78,10 @@ public class LabourDataAdapter extends RecyclerView.Adapter<LabourDataAdapter.My
         }
     }
 
+//    @Override
+//   public void onDataChanged(){
+//            if (progressBar != null){
+//                progressBar.setVisibility(View.GONE);
+//            }
+//   }
 }
