@@ -43,10 +43,16 @@ public class labourManagFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_labour_manag, container, false);
+
+        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        if(actionBar != null){
+            actionBar.setTitle("All Labour Details");
+        }
+
         recyclerView = view.findViewById(R.id.recyclerviewLabour);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("VehicalOwner/Labour");
+        databaseReference = firebaseDatabase.getReference("VehicleOwner/Labour");
         labourClassList = new ArrayList<>();
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -75,10 +81,6 @@ public class labourManagFragment extends Fragment {
             }
         });
 
-        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
-        if(actionBar != null){
-            actionBar.setTitle("Labour Manage");
-        }
 
         return view;
     }

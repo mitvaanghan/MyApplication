@@ -45,6 +45,11 @@ public class userFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_user, container, false);
         recyclerView = view.findViewById(R.id.userrecyclerview);
 
+        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        if(actionBar != null){
+            actionBar.setTitle("All User Details");
+        }
+
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("User/Registration");
         userList = new ArrayList<>();
@@ -75,11 +80,6 @@ public class userFragment extends Fragment {
             }
         });
 
-
-        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
-        if(actionBar != null){
-            actionBar.setTitle("User");
-        }
 
         return  view;
     }

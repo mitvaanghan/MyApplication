@@ -13,6 +13,9 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.example.myapplication.R;
 
@@ -29,6 +32,12 @@ public class returnPolicyFragment extends Fragment {
         if(actionBar != null){
             actionBar.setTitle("Refund & Return Policy");
         }
+        WebView webView = view.findViewById(R.id.refundpolicy);
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("https://sites.google.com/view/refundreturnpolicy/home");
+
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
 
         return  view;
     }

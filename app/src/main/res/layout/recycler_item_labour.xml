@@ -2,119 +2,60 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="110dp"
+    android:layout_height="70dp"
     android:paddingTop="?attr/actionBarSize"
     app:cardCornerRadius="16dp"
-    android:backgroundTint="@color/blue"
+    android:backgroundTint="#E3E6F1"
     android:layout_marginTop="8dp"
     android:layout_marginStart="10dp"
     android:layout_marginEnd="10dp"
-    app:cardElevation="20dp"
+    app:cardElevation="5dp"
     android:id="@+id/recCard"
     android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="65dp"
+        android:layout_height="60dp"
+        android:src="@drawable/user"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/white"
-            android:text="@string/name_labour_txt"
-            android:textSize="16sp" />
+        android:orientation="vertical"
+        android:layout_marginStart="80dp">
 
         <TextView
             android:id="@+id/recNameLabour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="16sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:text="@string/name_card_labour_txt"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            android:layout_marginTop="15dp"
+            android:text="@string/name_card_txt"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/contact_labour_txt"
-            android:textSize="16sp"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/white"/>
-
-        <TextView
-            android:id="@+id/recConatctLabour"
+            android:id="@+id/recMobileLabour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/white"
-            android:layout_marginTop="30dp"
-            android:text="@string/contact_card_txt"
+            android:textColor="@color/black"
+            android:text="@string/mobilenumber"
             android:textSize="16sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginStart="350dp"
+        android:layout_marginTop="20dp">
 
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/adhracard_number_txt"
-            android:textSize="16sp"
-            android:layout_marginTop="55dp"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/white"/>
-
-        <TextView
-            android:id="@+id/recAdharCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/white"
-            android:layout_marginTop="55dp"
-            android:text="@string/adhar_card_txt"
-            android:textSize="16sp" />
-
+            android:src="@drawable/baseline_navigate_next_24"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/address_txt"
-            android:textSize="16sp"
-            android:layout_marginTop="80dp"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/white"/>
-
-        <TextView
-            android:id="@+id/recAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/white"
-            android:layout_marginTop="80dp"
-            android:text="@string/address_card_txt"
-            android:textSize="16sp" />
-
-    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -53,9 +53,9 @@
     <string name="total_revenue">Total Revenue</string>
     <string name="total_rides">Total Rides</string>
     <string name="total_user">Total User</string>
-    <string name="_100000">100000+</string>
+    <string name="_100000">1000</string>
     <string name="_100">100+</string>
-    <string name="_200">200+</string>
+    <string name="_200">20</string>
     <string name="_1000">1000+</string>
     <string name="name">Name</string>-->
     <string name="email">Email</string>-->
@@ -66,7 +66,7 @@
     <string name="email_txt">Email :</string>
     <string name="city_txt">City :</string>
     <string name="city_card_txt">city</string>
-    <string name="contact_txt">Contact :</string>
+    <string name="contact_txt">Contact Number :</string>
     <string name="contact_card_txt">contact </string>
     <string name="adhracard_number_txt">Adhracard Number :</string>
     <string name="adhar_card_txt">adhar</string>
@@ -80,5 +80,10 @@
     <string name="update">Update</string>
     <string name="contact_number">Contact Number</string>
     <string name="city">City</string>
+    <string name="mobile_number">Mobile Number :</string>
+    <string name="mobilenumber">mobilenumber</string>
+    <string name="plate_number">Plate Number :</string>
+    <string name="platenumber">platenumber</string>
+    <string name="aadhharcard_number">Aadhharcard Number:</string>
 
 </resources>

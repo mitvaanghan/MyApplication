@@ -103,7 +103,7 @@ signIn extends AppCompatActivity {
                                 });
                             }
                             else {
-                                txtinputpass.setError("Please! Enter Valid Password");
+                                txtinputpass.setError("Password must be 8 Digits!");
                             }
                         }
                         else {

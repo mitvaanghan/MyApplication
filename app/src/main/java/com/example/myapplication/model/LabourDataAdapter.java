@@ -13,13 +13,13 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.labourDetail;
 import com.example.myapplication.ui.labourManagFragment;
 
 import java.util.List;
 
 public class LabourDataAdapter extends RecyclerView.Adapter<LabourDataAdapter.MyViewHolder>{
 
-    static ProgressBar progressBar;
     private final Context context;
     private final List<LabourClass> labourClassList;
 
@@ -41,19 +41,15 @@ public class LabourDataAdapter extends RecyclerView.Adapter<LabourDataAdapter.My
         LabourClass labourClass = labourClassList.get(position);
         holder.name.setText(labourClass.getName());
         holder.mnumber.setText(labourClass.getMnumber());
-        holder.aadhar.setText(labourClass.getAadhar());
-        holder.address.setText(labourClass.getAddress());
 
-        holder.card.setOnClickListener(v -> {
-            Intent intent = new Intent(context , labourManagFragment.class);
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context , labourDetail.class);
             intent.putExtra("Name",labourClassList.get(holder.getAdapterPosition()).getName());
-            intent.putExtra("Conatct",labourClassList.get(holder.getAdapterPosition()).getMnumber());
-            intent.putExtra("Adharcard Number",labourClassList.get(holder.getAdapterPosition()).getAadhar());
-            intent.putExtra("Address",labourClassList.get(holder.getAdapterPosition()).getAddress());
-
+            intent.putExtra("mnumber",labourClassList.get(holder.getAdapterPosition()).getMnumber());
+            intent.putExtra("Aadhaar",labourClassList.get(holder.getAdapterPosition()).getAadhar());
+            intent.putExtra("City",labourClassList.get(holder.getAdapterPosition()).getAddress());
             context.startActivity(intent);
         });
-
     }
 
     @Override
@@ -62,26 +58,18 @@ public class LabourDataAdapter extends RecyclerView.Adapter<LabourDataAdapter.My
     }
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name,aadhar,address,mnumber;
+        TextView name,mnumber;
         CardView card;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-          //  progressBar = itemView.findViewById(R.id.progressBar);
             card = itemView.findViewById(R.id.recCard);
             name = itemView.findViewById(R.id.recNameLabour);
-            aadhar = itemView.findViewById(R.id.recAdharCard);
-            mnumber = itemView.findViewById(R.id.recConatctLabour);
-            address = itemView.findViewById(R.id.recAddress);
+            mnumber = itemView.findViewById(R.id.recMobileLabour);
 
         }
     }
 
-//    @Override
-//   public void onDataChanged(){
-//            if (progressBar != null){
-//                progressBar.setVisibility(View.GONE);
-//            }
-//   }
+
 }

@@ -56,7 +56,7 @@ public class homeFragment extends Fragment {
 
         txttotalvehicleowner = view.findViewById(R.id.txttotalVOwner);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        datavehicleowner = firebaseDatabase.getReference("VehicalOwner/Registration");
+        datavehicleowner = firebaseDatabase.getReference("VehicleOwner/Registration");
         datavehicleowner.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

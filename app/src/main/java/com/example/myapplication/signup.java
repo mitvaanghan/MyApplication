@@ -152,7 +152,7 @@ signup extends AppCompatActivity {
 
                                                     }
                                                     else {
-                                                        txtinputpass.setError("Please! Enter Valid Password");
+                                                        txtinputpass.setError("Password must be 8 Digitis!");
                                                     }
                                                 }
                                                 else {
@@ -160,7 +160,7 @@ signup extends AppCompatActivity {
                                                 }
                                             }
                                             else {
-                                                txtinputcnumber.setError("Please! Enter Valid Contact Number");
+                                                txtinputcnumber.setError("Contact Number must be 10 Digits!");
                                             }
                                         }
                                         else {

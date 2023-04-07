@@ -84,18 +84,18 @@ public class adminProfile extends AppCompatActivity {
                     btnupdate.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (!name.isEmpty()){
-                                edtname.setError(null);
-                                if (!email.isEmpty()){
-                                    edtemail.setError(null);
-                                    if (!contact.isEmpty()) {
-                                        edtcontact.setError(null);
-                                        if (!city.isEmpty()){
-                                            edtcity.setError(null);
-                                            if (Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                                                edtemail.setError(null);
-                                                if (contact.length()==10){
-                                                    edtcontact.setError(null);
+//                            if (!name.isEmpty()){
+//                                edtname.setError(null);
+//                                if (!email.isEmpty()){
+//                                    edtemail.setError(null);
+//                                    if (!contact.isEmpty()) {
+//                                        edtcontact.setError(null);
+//                                        if (!city.isEmpty()){
+//                                            edtcity.setError(null);
+//                                            if (Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+//                                                edtemail.setError(null);
+//                                                if (contact.length()==10){
+//                                                    edtcontact.setError(null);
 
                                                     databaseReference.child(st).child("name").setValue(edtname.getText().toString().trim());
                                                     databaseReference.child(st).child("email").setValue(edtemail.getText().toString().trim());
@@ -103,25 +103,25 @@ public class adminProfile extends AppCompatActivity {
                                                     databaseReference.child(st).child("city").setValue(edtcity.getText().toString().trim());
 
                                                     Toast.makeText(adminProfile.this, "Profile is Changed Successfully", Toast.LENGTH_SHORT).show();
-                                                }
-                                                else {
-                                                    edtcontact.setError("Contact Number must be in proper formate");
-                                                }
-                                            }else {
-                                                edtemail.setError("Email must be in proper Formate");
-                                            }
-                                        }else {
-                                            edtcity.setError("Enter City");
-                                        }
-                                    }else {
-                                        edtcontact.setError("Enter Contact Number");
-                                    }
-                                }else {
-                                    edtemail.setError("Enter Email Id");
-                                }
-                            }else {
-                                edtname.setError("Enter Name");
-                            }
+//                                                }
+//                                                else {
+//                                                    edtcontact.setError("Contact Number must be in proper formate");
+//                                                }
+//                                            }else {
+//                                                edtemail.setError("Email must be in proper Formate");
+//                                            }
+//                                        }else {
+//                                            edtcity.setError("Enter City");
+//                                        }
+//                                    }else {
+//                                        edtcontact.setError("Enter Contact Number");
+//                                    }
+//                                }else {
+//                                    edtemail.setError("Enter Email Id");
+//                                }
+//                            }else {
+//                                edtname.setError("Enter Name");
+//                            }
                         }
                     });
                 }

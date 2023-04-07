@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
        headerView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               startActivity(new Intent(MainActivity.this,manageProfile.class));
+               startActivity(new Intent(MainActivity.this,adminProfile.class));
            }
        });
 
@@ -156,10 +156,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.nav_rPolicy:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new returnPolicyFragment()).commit();
-                break;
-
-            case R.id.nav_report:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new reportFragment()).commit();
                 break;
 
             case R.id.nav_logout:

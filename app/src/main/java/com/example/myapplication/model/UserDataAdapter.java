@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.ui.userFragment;
+import com.example.myapplication.userDetail;
 
 import java.util.List;
 
@@ -37,21 +38,21 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.MyView
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Userclass userclass = userList.get(position);
         holder.name.setText(userclass.getName());
-        holder.email.setText(userclass.getEmail());
         holder.contact.setText(userclass.getContact());
-        holder.city.setText(userclass.getCity());
 
 
-        holder.card.setOnClickListener(v -> {
-            Intent intent = new Intent(context, userFragment.class);
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, userDetail.class);
             intent.putExtra("Name", userList.get(holder.getAdapterPosition()).getName());
-            intent.putExtra("Email", userList.get(holder.getAdapterPosition()).getEmail());
             intent.putExtra("Contact",userList.get(holder.getAdapterPosition()).getContact());
-            intent.putExtra("City",userList.get(holder.getAdapterPosition()).getCity());
-
+            intent.putExtra("email",userList.get(holder.getAdapterPosition()).getEmail());
+            intent.putExtra("city",userList.get(holder.getAdapterPosition()).getCity());
             context.startActivity(intent);
         });
+
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -61,7 +62,7 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.MyView
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView name, email , contact , city;
+        TextView name, contact ;
         CardView card;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -69,9 +70,7 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.MyView
 
             card = itemView.findViewById(R.id.recCard);
             name = itemView.findViewById(R.id.recName);
-            email = itemView.findViewById(R.id.recemail);
-            contact = itemView.findViewById(R.id.reccontact);
-            city = itemView.findViewById(R.id.reccity);
+            contact = itemView.findViewById(R.id.recMobile);
 
         }
     }
