@@ -14,15 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.myapplication.R;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class vehicleDetailsDataAdapter extends RecyclerView.Adapter<vehicleDetailsDataAdapter.viewHolder> {
 
-    ArrayList<vehicleDetailsClass> vehicleDetailsClassArrayList;
+    List<vehicleDetailsClass> vehicleList;
     Context context;
 
-    public vehicleDetailsDataAdapter(ArrayList<vehicleDetailsClass> vehicleDetailsClassArrayList, Context context) {
-        this.vehicleDetailsClassArrayList = vehicleDetailsClassArrayList;
+    public vehicleDetailsDataAdapter(Context context,List<vehicleDetailsClass> vehicle) {
+        this.vehicleList = vehicle;
         this.context = context;
     }
 
@@ -36,19 +36,19 @@ public class vehicleDetailsDataAdapter extends RecyclerView.Adapter<vehicleDetai
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
 
-        vehicleDetailsClass vehicleDetailsClass = vehicleDetailsClassArrayList.get(position);
+        vehicleDetailsClass vehicleDetailsClass = vehicleList.get(position);
         holder.vType.setText(vehicleDetailsClass.getType());
         holder.VCharge.setText(vehicleDetailsClass.getCharge());
 
-        String imgURL = vehicleDetailsClass.getImgUrl();
-        Glide.with(holder.imgVehicleType.getContext()).load(imgURL).into(holder.imgVehicleType);
+        String imgUrl = vehicleDetailsClass.getImgUrl();
+        Glide.with(holder.imgVehicleType.getContext()).load(imgUrl).into(holder.imgVehicleType);
 
 
     }
 
     @Override
     public int getItemCount() {
-        return vehicleDetailsClassArrayList.size();
+        return vehicleList.size();
     }
 
     public class viewHolder extends RecyclerView.ViewHolder {

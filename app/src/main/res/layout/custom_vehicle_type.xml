@@ -29,8 +29,8 @@
 
                 <ImageView
                     android:id="@+id/imgVehicleType"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:src="@drawable/cargotruck" />
 
@@ -54,9 +54,8 @@
                         android:layout_height="30dp"
                         android:layout_weight="0.3"
                         android:text="@string/type_txt"
-                        android:textSize="20sp"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"/>
+                        android:textSize="18sp"
+                        android:textColor="@color/black"/>
 
                     <TextView
                         android:id="@+id/vType"
@@ -64,9 +63,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
                         android:text="@string/_2_wheeler"
-                        android:textColor="@color/blue"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
 
                 </LinearLayout>
 
@@ -81,9 +79,8 @@
                         android:layout_height="30dp"
                         android:layout_weight="0.3"
                         android:text="@string/charge"
-                        android:textSize="20sp"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"/>
+                        android:textSize="18sp"
+                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/vCharge"
@@ -91,21 +88,20 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
                         android:text="@string/_20"
-                        android:textColor="@color/blue"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
 
                 </LinearLayout>
 
 
             </LinearLayout>
 
-
         </LinearLayout>
+
         <ImageView
             android:id="@+id/vEdit"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:src="@drawable/ic_edit"/>

@@ -99,5 +99,6 @@
     <string name="_2_wheeler">2-Wheeler</string>
     <string name="charge">Charge :</string>
     <string name="_20">20</string>
+    <string name="change_vehicle_charge">Change Vehicle Charge</string>
 
 </resources>

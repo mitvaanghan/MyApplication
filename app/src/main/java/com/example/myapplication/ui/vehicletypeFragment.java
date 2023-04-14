@@ -2,37 +2,44 @@ package com.example.myapplication.ui;
 
 import static com.example.myapplication.MainActivity.toolbar;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.myapplication.R;
-import com.example.myapplication.model.Userclass;
+import com.example.myapplication.model.vehicleDetailsClass;
 import com.example.myapplication.model.vehicleDetailsDataAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class vehicletypeFragment extends Fragment {
-
-
     RecyclerView recyclerView;
-    List<vehicleDetailsDataAdapter> vehicleDetailsDataAdapterList;
+    List<vehicleDetailsClass> vehicleList;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     ValueEventListener valueEventListener;
+    ImageView vEdit;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,8 +52,35 @@ public class vehicletypeFragment extends Fragment {
             actionBar.setTitle("Vehicle Details");
         }
 
+        vEdit = view.findViewById(R.id.vEdit);
         recyclerView = view.findViewById(R.id.recyclerviewVehicleType);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("Vehicle Type/Type");
+        vehicleList = new ArrayList<>();
 
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+
+        vehicleDetailsDataAdapter adapter = new vehicleDetailsDataAdapter(getContext(),vehicleList);
+        recyclerView.setAdapter(adapter);
+
+        valueEventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                vehicleList.clear();
+                for (DataSnapshot itemSnapshot: snapshot.getChildren()) {
+                    vehicleDetailsClass vehicleDetailsClass = itemSnapshot.getValue(vehicleDetailsClass.class);
+                    vehicleList.add(vehicleDetailsClass);
+                }
+               adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         return view;
     }
