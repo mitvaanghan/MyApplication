@@ -85,5 +85,19 @@
     <string name="plate_number">Plate Number :</string>
     <string name="platenumber">platenumber</string>
     <string name="aadhharcard_number">Aadhharcard Number:</string>
+    <string name="vehicle_details">Vehicle Details :</string>
+    <string name="vehicle_type">Vehicle Type :</string>
+    <string name="type">type</string>
+    <string name="vehicle_plate_number">Vehicle Plate Number :</string>
+    <string name="palteno">palteno</string>
+    <string name="driver_name">Driver Name :</string>
+    <string name="drivername">drivername</string>
+    <string name="driver_contact_number">Driver Contact Number :</string>
+    <string name="dconatctno">dconatctno</string>
+    <string name="vehicle_Type">Vehicle Type</string>
+    <string name="type_txt">Type :</string>
+    <string name="_2_wheeler">2-Wheeler</string>
+    <string name="charge">Charge :</string>
+    <string name="_20">20</string>
 
 </resources>

@@ -56,5 +56,7 @@ public class vehicleOwnerDetail extends AppCompatActivity {
         txtname.setText(Name);
         txtcontact.setText(Contact);
         txtcity.setText(City);
+
+
     }
 }

@@ -28,6 +28,7 @@ import com.example.myapplication.ui.reportFragment;
 import com.example.myapplication.ui.returnPolicyFragment;
 import com.example.myapplication.ui.userFragment;
 import com.example.myapplication.ui.vehicleOwnerFragment;
+import com.example.myapplication.ui.vehicletypeFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -139,10 +140,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new homeFragment()).commit();
                 break;
 
+            case R.id.nav_vehicle:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment,new vehicletypeFragment()).commit();
+                break;
+
             case R.id.nav_vOwner:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new vehicleOwnerFragment()).commit();
                 break;
-            case R.id.nav_user:
+
+                case R.id.nav_user:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new userFragment()).commit();
                 break;
 
